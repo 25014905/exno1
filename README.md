@@ -288,6 +288,44 @@ df_cleaned
 
 
 
+import pandas as pd 
+
+import numpy as np
+
+data_set = pd.read_csv("iris.csv")
+
+df = pd.DataFrame(data_set)
+
+Q1 = df["sepal_width"].quantile(0.25)
+
+Q3 = df["sepal_width"].quantile(0.75)
+
+IQR = Q3 - Q1
+
+lower_bound = Q1 - 1.5 * IQR
+
+upper_bound = Q3 + 1.5 * IQR
+
+print("The Orginal DataSet")
+
+print(df)
+
+outliers = df[(df['sepal_width'] < lower_bound) | (df['sepal_width'] > upper_bound)]
+
+print("The Outliers")
+
+print(outliers)
+
+df_clean = df[(df['sepal_width'] >= lower_bound) & (df['sepal_width'] <= upper_bound)]
+
+print("The Dataset after removing the outliers")
+
+print(df_clean)
+
+<img width="653" height="771" alt="image" src="https://github.com/user-attachments/assets/5b308725-ab5f-43ec-8e00-693529b0c40e" />
+
+
+
 
 
 
