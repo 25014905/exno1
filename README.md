@@ -31,6 +31,12 @@ print(data)
 
 
 
+df.describe()
+
+<img width="824" height="368" alt="image" src="https://github.com/user-attachments/assets/1874b7c5-be89-4ee1-9a6a-0d22c9b2a7bb" />
+
+
+
 
 df=pd.DataFrame(data)
 
@@ -50,9 +56,10 @@ print(df.isnull().sum())
 
 
 
-df.info
+df.info()
 
-<img width="993" height="855" alt="image" src="https://github.com/user-attachments/assets/5fa56d22-25a4-46cf-9967-a044788c1f2d" />
+
+<img width="404" height="272" alt="image" src="https://github.com/user-attachments/assets/57281b00-53f3-4b73-8b6e-5ae2170d7549" />
 
 
 
@@ -171,9 +178,129 @@ print(dfd)
 
 
 
-df.describe()
 
-<img width="824" height="368" alt="image" src="https://github.com/user-attachments/assets/1874b7c5-be89-4ee1-9a6a-0d22c9b2a7bb" />
+
+import pandas as pd
+
+import matplotlib.pyplot as plt
+
+import numpy as np
+
+data=pd.read_csv("iris.csv")
+
+df=pd.DataFrame(data)
+
+print(df)
+
+x=df["petal_length"]
+
+y=df["sepal_length"]
+
+plt.bar(x,y)
+
+plt.show()
+
+
+<img width="691" height="811" alt="image" src="https://github.com/user-attachments/assets/4ad04cc5-dd24-4eca-835d-1901732868f0" />
+
+
+
+
+import pandas as pd
+
+import matplotlib.pyplot as plt
+
+import numpy as np
+
+data=pd.read_csv("iris.csv")
+
+df=pd.DataFrame(data)
+
+print(df)
+
+x=df["petal_length"]
+
+y=df["sepal_length"]
+
+plt.xlabel('X-axis')
+
+plt.ylabel('Y-axis')
+
+plt.plot(x,y)
+
+plt.show()
+
+
+<img width="754" height="831" alt="image" src="https://github.com/user-attachments/assets/ffac437a-b692-4a97-abe2-b98cafb606b6" />
+
+
+
+plt.scatter(x,y)
+
+plt.show()
+
+
+<img width="730" height="516" alt="image" src="https://github.com/user-attachments/assets/2212ec26-9f62-408d-ae3b-3ee04ec0cc90" />
+
+
+
+import pandas as pd
+
+import matplotlib.pyplot as plt
+
+import numpy as np
+
+data=pd.read_csv("iris.csv")
+
+df=pd.DataFrame(data)
+
+print(df)
+
+dff=plt.boxplot(x="petal_width",data=df)
+
+print(dff)
+
+
+
+<img width="1353" height="892" alt="image" src="https://github.com/user-attachments/assets/0482d8b1-87d1-4e52-a86c-16e8d31d6f5f" />
+
+
+
+
+import pandas as pd 
+
+import numpy as np
+
+from scipy import stats
+
+data=pd.read_csv("iris.csv")
+
+df=pd.DataFrame(data)
+
+z_scores = np.abs(stats.zscore(df.select_dtypes(include=[np.number])))
+
+df_cleaned = df[(z_scores < 3).all(axis=1)] 
+
+df_cleaned
+
+
+<img width="569" height="513" alt="image" src="https://github.com/user-attachments/assets/d7bf2d87-6526-4a2d-9f8c-f03e6aa8d34a" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
