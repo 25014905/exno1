@@ -325,54 +325,5 @@ print(df_clean)
 <img width="653" height="771" alt="image" src="https://github.com/user-attachments/assets/5b308725-ab5f-43ec-8e00-693529b0c40e" />
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Result
-          <<include your Result here>>
+THUS DATA CLEANING IS PERFORMED
